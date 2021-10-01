@@ -1,0 +1,9 @@
+<%= @madlib.text %>
+<%= form_with model: @madlib, remote: true do |form| %>
+  <% @madlib.fields.keys.each do |key| %>
+    <%= key %>
+    <%= form.text_field "fields[#{key}]" %>
+    <br />
+  <% end %>
+  <%= form.submit %>
+<% end %>

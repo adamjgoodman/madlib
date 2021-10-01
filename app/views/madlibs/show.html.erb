@@ -1,0 +1,11 @@
+<%= @madlib.text %>
+<%= form_for :fields, url: madlib_generate_path(@madlib), remote: true do |form| %>
+  <% @madlib.fields.keys.each do |key| %>
+    <%= key %>
+    <%= form.text_field key %>
+    <br />
+  <% end %>
+  <%= form.submit %>
+<% end %>
+
+<div id="results"></div>
