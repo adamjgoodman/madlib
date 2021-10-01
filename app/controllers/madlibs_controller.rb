@@ -20,7 +20,7 @@ class MadlibsController < ApplicationController
       puts hash
       madlib.update!(fields: hash)
     end
-    redirect_to edit_madlib_path(madlib)
+    redirect_to madlib_path(madlib)
   end
 
   def show
@@ -33,15 +33,6 @@ class MadlibsController < ApplicationController
       madlib.text.sub!("{#{key.split(' (').first}}", value)
     end
     @results = madlib.text
-  end
-
-  def edit
-    @madlib = Madlib.find(params[:id])
-  end
-
-  def update
-    madlib = Madlib.find(params[:id])
-    madlib.update(madlib_params)
   end
 
   private

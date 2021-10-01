@@ -1,4 +1,8 @@
-<%= form_for @madlib, local: true do |form| %>
-  <%= form.text_area :text %>
-  <%= form.submit %>
-<% end %>
+<div class="col-12 mx-auto py-4">
+  <%= form_for @madlib, html: { class: "col-10 mx-auto form-row text-center" }, local: true do |form| %>
+    <h3>New MadLib</h3>
+    <%= form.text_area :text, class: "col-10 mx-auto" %>
+    <br />
+    <%= form.submit %>
+  <% end %>
+</div>

@@ -1,1 +1,1 @@
-document.getElementById("results").innerText = "<%= j @results.html_safe %>"
+document.getElementById("results").innerHTML = "<%= j render partial: "text", locals: { text: @results.html_safe}  %>"

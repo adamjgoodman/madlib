@@ -1,3 +1,7 @@
-<% @madlibs.each do |madlib| %>
-  <%= link_to madlib.id, madlib_path(madlib) %>
-<% end %>
+<div class="col-12 mx-auto">
+  <% @madlibs.each do |madlib| %>
+    <%= link_to madlib_path(madlib), class: "text-decoration-none text-black text-center" do %>
+      <%= render partial: "text", locals: { text: madlib.text } %>
+    <% end %>
+  <% end %>
+</div>
