@@ -1,10 +1,11 @@
 <%= render partial: "text", locals: { text: @madlib.text } %>
 <%= form_for :fields, url: madlib_generate_path(@madlib), html: { class: "col-10 mx-auto form-row text-center" }, remote: true do |form| %>
+  <h4>Fill in the Blanks</h4>
   <% @madlib.fields.keys.each do |key| %>
-    <%= form.text_field key, placeholder: key, class: "my-1" %>
+    <%= form.text_field key, placeholder: key, required: true, class: "m-2 border rounded-3 shadow-sm text-center" %>
   <% end %>
   <br />
-  <%= form.submit "Generate", class: "my-1" %>
+  <%= form.submit "Generate", class: "my-2 btn btn-secondary" %>
 <% end %>
 
 <div id="results"></div>

@@ -1,8 +1,8 @@
 <div class="col-12 mx-auto py-4">
   <%= form_for @madlib, html: { class: "col-10 mx-auto form-row text-center" }, local: true do |form| %>
     <h3>New MadLib</h3>
-    <%= form.text_area :text, class: "col-10 mx-auto" %>
+    <%= form.text_area :text, class: "col-10 mx-auto border rounded-3 shadow-sm p-3" %>
     <br />
-    <%= form.submit %>
+    <%= form.submit "Create", class: "btn btn-secondary my-2" %>
   <% end %>
 </div>
